@@ -1,0 +1,9 @@
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.companyName {
+    margin:0.5em;
+    margin-top: 1em;
+}
