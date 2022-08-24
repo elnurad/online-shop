@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0.5em;
+    margin-top: 1.2em;
+    /* flex-wrap: wrap; */
+}
+.shopButtonRow {
+    text-align: center;;
+}

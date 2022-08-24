@@ -1,0 +1,10 @@
+.catImg {
+    width: 33vw;
+   /* height: 20%; */
+}
+
+.rangeTitle, .rangeText {
+    margin: 0.5em;
+    text-align: center;
+    line-height: 1.5rem;
+}
