@@ -6,7 +6,7 @@ const logo = require('../assets/logo.svg');
 function CompanyName() {
   return (
     <div className={styles.companyName}>
-      <img className={styles.img} src={logo.default} alt="" />
+      <img className={styles.companyNameImg} src={logo.default} alt="" />
     </div>
   );
 }

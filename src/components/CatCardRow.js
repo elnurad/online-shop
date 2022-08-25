@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CatCard from './CatCard';
 import ShopButton from './ShopButton';
@@ -33,7 +34,7 @@ function CatCardRow({ catImageOne, catImageTwo, catImageThree }) {
           />
         </div>
       </div>
-      <div className={styles.shopButtonRow}><ShopButton /></div>
+      <Link to="/shop"><div className={styles.shopButtonRow}><ShopButton /></div></Link>
     </div>
 
   );
