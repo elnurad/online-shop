@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styles from './CatFoodCard.module.css';
 
 function CatFoodCard({
-  foodImage, foodName, foodPrice, handleClick,
+  foodImage, foodName, foodPrice, addItem,
 }) {
   CatFoodCard.propTypes = {
     foodImage: PropTypes.string.isRequired,
     foodName: PropTypes.string.isRequired,
     foodPrice: PropTypes.number.isRequired,
-    handleClick: PropTypes.func.isRequired,
+    addItem: PropTypes.func.isRequired,
   };
 
   return (
@@ -21,7 +21,7 @@ function CatFoodCard({
         {foodPrice}
 
       </p>
-      <button type="button" onClick={handleClick}>Add to Cart</button>
+      <button type="button" onClick={addItem}>Add to Cart</button>
     </div>
 
   );

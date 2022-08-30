@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import CatCard from './CatCard';
+import CatCardHome from './CatCardHome';
 import ShopButton from './ShopButton';
 import styles from './CatCardRow.module.css';
 
-function CatCardRow({ catImageOne, catImageTwo, catImageThree }) {
-  CatCardRow.propTypes = {
+function Home({ catImageOne, catImageTwo, catImageThree }) {
+  Home.propTypes = {
     catImageOne: PropTypes.string.isRequired,
     catImageTwo: PropTypes.string.isRequired,
     catImageThree: PropTypes.string.isRequired,
@@ -21,13 +21,13 @@ function CatCardRow({ catImageOne, catImageTwo, catImageThree }) {
     <div>
       <div className={styles.container}>
         <div>
-          <CatCard catImage={catImageOne} rangeTitle={rangeTitleOne} rangeText={rangeTextOne} />
+          <CatCardHome catImage={catImageOne} rangeTitle={rangeTitleOne} rangeText={rangeTextOne} />
         </div>
         <div>
-          <CatCard catImage={catImageTwo} rangeTitle={rangeTitleTwo} rangeText={rangeTextTwo} />
+          <CatCardHome catImage={catImageTwo} rangeTitle={rangeTitleTwo} rangeText={rangeTextTwo} />
         </div>
         <div>
-          <CatCard
+          <CatCardHome
             catImage={catImageThree}
             rangeTitle={rangeTitleThree}
             rangeText={rangeTextThree}
@@ -40,4 +40,4 @@ function CatCardRow({ catImageOne, catImageTwo, catImageThree }) {
   );
 }
 
-export default CatCardRow;
+export default Home;
