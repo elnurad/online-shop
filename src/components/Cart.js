@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styles from './Cart.module.css';
@@ -16,11 +18,17 @@ function Cart({
     setCart([...cartDisplay]);
   };
   const decrement = (item) => {
-    // eslint-disable-next-line no-param-reassign
-    item.quantity -= 1;
-    console.log(item.quantity);
-    setCart([...cartDisplay]);
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+      console.log(item.quantity);
+      setCart([...cartDisplay]);
+    }
   };
+  const removeItem = (item) => {
+    const newCartDisplay = cartDisplay.filter((cartItem) => item.id !== cartItem.id);
+    setCart([...newCartDisplay]);
+  };
+
   return (
     <div className={styles.cartContainer}>
       {cartDisplay.map((item) => (
@@ -42,8 +50,15 @@ function Cart({
             {' '}
             {item.price * item.quantity}
           </p>
+          <button type="button" onClick={() => removeItem(item)}>remove item</button>
         </div>
       ))}
+      <h1>
+        Total:
+        {
+        cartDisplay.reduce((prev, cur) => prev + (cur.price * cur.quantity), 0)
+        }
+      </h1>
     </div>
   );
 }
