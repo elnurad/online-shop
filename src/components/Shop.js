@@ -80,6 +80,15 @@ function Shop({ cart, setCart, foodItems }) {
     setCart([...cart, item]);
     // eslint-disable-next-line no-console
   };
+  // const increment = (item) => {
+  //   // eslint-disable-next-line no-param-reassign
+  //   item.quantity += 1;
+  // };
+  // const decrement = (item) => {
+  //   // eslint-disable-next-line no-param-reassign
+  //   item.quantity -= 1;
+  //   console.log(item.quantity);
+  // };
   return (
     <div>
       <Link to="/cart">Proceed to Checkout</Link>
@@ -91,6 +100,8 @@ function Shop({ cart, setCart, foodItems }) {
             foodName={item.name}
             foodPrice={item.price}
             addItem={() => addItem(item)}
+            // increment={increment}
+            // decrement={decrement}
 
           />
         ))}

@@ -1,29 +1,28 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import styles from './Cart.module.css';
 // import CatFoodCard from './CatFoodCard';
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function Cart({ cart, setCart }) {
-  // eslint-disable-next-line global-require
-  // const foodImageTwo = require('../assets/cat_beef_chicken.jpg');
-  // eslint-disable-next-line global-require
-  // const foodImageThree = require('../assets/cat_lamb_chicken.jpg');
+function Cart({
   // eslint-disable-next-line no-unused-vars
+  cart, setCart,
+}) {
   const cartDisplay = [...cart];
-  // const sample = [{
-  //   image: foodImageTwo,
-  //   name: 'Cat Beef Chicken',
-  //   price: 10.50,
-  //   id: 2,
-  // },
-  // {
-  //   image: foodImageThree,
-  //   name: 'Cat Lamb Chicken',
-  //   price: 9.45,
-  //   id: 3,
-  // },
-  // ];
+  const increment = (item) => {
+    // eslint-disable-next-line no-param-reassign
+    item.quantity += 1;
+    console.log(item.quantity);
+    setCart([...cartDisplay]);
+  };
+  const decrement = (item) => {
+    // eslint-disable-next-line no-param-reassign
+    item.quantity -= 1;
+    console.log(item.quantity);
+    setCart([...cartDisplay]);
+  };
   return (
-    <div>
+    <div className={styles.cartContainer}>
       {cartDisplay.map((item) => (
         <div key={item.id}>
           <img src={item.image} alt="" />
@@ -32,20 +31,18 @@ function Cart({ cart, setCart }) {
             price:
             {item.price}
           </p>
-          <p>q: 3</p>
+          <p>
+            <button type="button" onClick={() => increment(item)}>+</button>
+            {item.quantity}
+            <button type="button" onClick={() => decrement(item)}>-</button>
+
+          </p>
           <p>
             total:
             {' '}
-            {item.price * 3}
+            {item.price * item.quantity}
           </p>
         </div>
-        // <CatFoodCard
-        //   key={item.id}
-        //   foodImage={item.image}
-        //   foodName={item.name}
-        //   foodPrice={item.price}
-        // />
-
       ))}
     </div>
   );
