@@ -8,18 +8,20 @@ import styles from './Cart.module.css';
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function Cart({
   // eslint-disable-next-line no-unused-vars
-  cart, setCart,
+  cart, setCart, cartQuantity, setCartQuantity,
 }) {
   const cartDisplay = [...cart];
   const increment = (item) => {
     // eslint-disable-next-line no-param-reassign
     item.quantity += 1;
+    setCartQuantity(cartQuantity + 1);
     console.log(item.quantity);
     setCart([...cartDisplay]);
   };
   const decrement = (item) => {
     if (item.quantity > 1) {
       item.quantity -= 1;
+      setCartQuantity(cartQuantity - 1);
       console.log(item.quantity);
       setCart([...cartDisplay]);
     }
@@ -27,6 +29,7 @@ function Cart({
   const removeItem = (item) => {
     const newCartDisplay = cartDisplay.filter((cartItem) => item.id !== cartItem.id);
     setCart([...newCartDisplay]);
+    setCartQuantity(cartQuantity - item.quantity);
   };
 
   return (

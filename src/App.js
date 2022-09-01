@@ -85,6 +85,16 @@ const foodItems = [{
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [cartQuantity, setCartQuantity] = useState(0);
+  // const addItem = (item) => {
+  //   console.log(cart);
+  //   // eslint-disable-next-line react/prop-types
+  //   if (cart.indexOf(item) > -1) {
+  //     return;
+  //   }
+  //   setCart([...cart, item]);
+  // };
   // const addItem = (item) => {
   //   setCart([...cart, item]);
   //   // eslint-disable-next-line no-console
@@ -93,11 +103,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Link to="/"><NavBar /></Link>
+        <Link to="/"><NavBar cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} /></Link>
         <Routes>
-          <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} />} />
+          <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
           <Route path="/" exact element={<Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />} />
-          <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} setCart={setCart} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
         </Routes>
       </div>
     </Router>

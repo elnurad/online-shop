@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 // import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -65,8 +68,10 @@ import CatFoodCard from './CatFoodCard';
 // },
 // ];
 
-// eslint-disable-next-line react/prop-types
-function Shop({ cart, setCart, foodItems }) {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function Shop({
+  cart, setCart, foodItems, cartQuantity, setCartQuantity,
+}) {
   Shop.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     foodItems: PropTypes.array.isRequired,
@@ -75,10 +80,13 @@ function Shop({ cart, setCart, foodItems }) {
     console.log(cart);
     // eslint-disable-next-line react/prop-types
     if (cart.indexOf(item) > -1) {
+      item.quantity += 1;
+      setCartQuantity(cartQuantity + 1);
       return;
     }
     setCart([...cart, item]);
-    // eslint-disable-next-line no-console
+    setCartQuantity(cartQuantity + 1);
+    console.log(cartQuantity);
   };
   // const increment = (item) => {
   //   // eslint-disable-next-line no-param-reassign
