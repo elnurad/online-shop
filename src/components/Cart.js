@@ -53,12 +53,15 @@ function Cart({
           <button type="button" onClick={() => removeItem(item)}>remove item</button>
         </div>
       ))}
-      <h1>
-        Total:
-        {
+      {cartDisplay.length === 0 ? (<h1>your cart is empty</h1>)
+        : (
+          <h1>
+            Total:
+            {
         cartDisplay.reduce((prev, cur) => prev + (cur.price * cur.quantity), 0)
         }
-      </h1>
+          </h1>
+        )}
     </div>
   );
 }
