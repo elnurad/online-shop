@@ -21,7 +21,7 @@ function CatFoodCard({
         {foodPrice}
 
       </p>
-      <button type="button" onClick={addItem}>Add to Cart</button>
+      <button className={styles.addToCartButton} type="button" onClick={addItem}>Add to Cart</button>
     </div>
 
   );

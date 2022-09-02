@@ -1,2 +1,14 @@
-.catFoodImg {
+.addToCartButton {
+    color: #fff;
+    background-color: #9882b0;
+    border: 0;
+    border-radius: 6px;
+    font-family: miller-text, serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.11;
+    margin-top: 0.75rem;
+    width: 60%;
+    cursor: pointer;
 }

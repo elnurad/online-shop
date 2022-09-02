@@ -4,6 +4,7 @@
     margin-right: auto;
 }
 .navbar {
+    display: flex;
     margin:0.5em;
     margin-top: 1em;
 }
