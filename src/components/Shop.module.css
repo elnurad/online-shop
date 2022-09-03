@@ -1,11 +1,13 @@
-
-
 .shopContainer {
-    background-color: #f6f6f6;
+    background-color: #fff;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
-    margin: 1em;
+    margin: 2em;
     margin-bottom: 5em;
     padding: 1em;
+}
+.shopContainerImg {
+    margin: 0.5em;
+    
 }

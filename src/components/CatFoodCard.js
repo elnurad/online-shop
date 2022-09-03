@@ -13,7 +13,7 @@ function CatFoodCard({
   };
 
   return (
-    <div>
+    <div className={styles.catFoodCardItem}>
       <img className={styles.catFoodImg} src={foodImage} alt="" />
       <h4>{foodName}</h4>
       <p>

@@ -33,14 +33,14 @@ function Shop({
     <div>
       <div className={styles.shopContainer}>
         {foodItems.map((item) => (
-          <CatFoodCard
-            key={item.id}
-            foodImage={item.image}
-            foodName={item.name}
-            foodPrice={item.price}
-            addItem={() => addItem(item)}
-
-          />
+          <div key={item.id} className={styles.shopContainerImg}>
+            <CatFoodCard
+              foodImage={item.image}
+              foodName={item.name}
+              foodPrice={item.price}
+              addItem={() => addItem(item)}
+            />
+          </div>
         ))}
       </div>
     </div>
