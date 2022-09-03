@@ -2,6 +2,8 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styles from './Cart.module.css';
 // import CatFoodCard from './CatFoodCard';
 
@@ -34,37 +36,40 @@ function Cart({
 
   return (
     <div className={styles.cartContainer}>
-      {cartDisplay.map((item) => (
-        <div key={item.id}>
-          <img src={item.image} alt="" />
-          <h4>{item.name}</h4>
-          <p>
-            price:
-            {item.price}
-          </p>
-          <p>
-            <button type="button" onClick={() => increment(item)}>+</button>
-            {item.quantity}
-            <button type="button" onClick={() => decrement(item)}>-</button>
+      <ul>
+        {cartDisplay.map((item) => (
+          <li className={styles.cartDisplayItem} key={item.id}>
+            <img src={item.image} alt="" />
+            <div className={styles.cartDisplayText}>
+              <div className={styles.cartFoodNames}><h4>{item.name}</h4></div>
+              <p>
+                $
+                {item.price}
+              </p>
+              <p>
+                <button type="button" onClick={() => increment(item)}>+</button>
+                {item.quantity}
+                <button type="button" onClick={() => decrement(item)}>-</button>
 
-          </p>
-          <p>
-            total:
-            {' '}
-            {item.price * item.quantity}
-          </p>
-          <button type="button" onClick={() => removeItem(item)}>remove item</button>
-        </div>
-      ))}
-      {cartDisplay.length === 0 ? (<h1>your cart is empty</h1>)
-        : (
-          <h1>
-            Total:
-            {
-        cartDisplay.reduce((prev, cur) => prev + (cur.price * cur.quantity), 0)
-        }
-          </h1>
-        )}
+              </p>
+              <FontAwesomeIcon icon={faTrashCan} onClick={() => removeItem(item)} />
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className={styles.paymentUI}>
+        {cartDisplay.length === 0 ? (<h1>your cart is empty</h1>)
+          : (
+            <h3 className={styles.total}>
+              Total:
+
+              {cartDisplay.reduce((prev, cur) => prev + (cur.price * cur.quantity), 0)}
+            </h3>
+          )}
+
+        <div><button type="button">Proceed To Checkout</button></div>
+        <div><button type="button">Back to Shop</button></div>
+      </div>
     </div>
   );
 }

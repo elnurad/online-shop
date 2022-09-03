@@ -4,6 +4,47 @@
   box-sizing: border-box;
 }
 
-.cartContainer {
-    margin-left: 5em;
+body {
+  background: #f6f6f6;
 }
+
+ul {
+ margin: auto;
+ width: 50%;
+ padding: 1rem;
+}
+.cartContainer {
+    margin: 0 auto;
+    display: flex;
+    
+}
+.cartContainer img {
+  max-height: 103px;
+  display: inline-block;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.cartDisplayItem {
+  display: flex;
+}
+.cartDisplayText {
+  display: flex;
+  align-items: center;
+  
+}
+.cartDisplayText p, .cartDisplayText h4 {
+  margin: 1rem;
+}
+.cartFoodNames {
+  width: 15em;
+}
+.total {
+  text-align: center;
+}
+.paymentUI {
+  text-align: center;
+}
+/* .paymentUI button {
+  display: block;
+} */
