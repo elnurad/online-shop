@@ -1,7 +1,9 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styles from './Cart.module.css';
@@ -33,11 +35,14 @@ function Cart({
     setCart([...newCartDisplay]);
     setCartQuantity(cartQuantity - item.quantity);
   };
+  const handleCheckout = () => {
+    alert('Thanks for your shopping with us!');
+  };
 
   return (
     <div className={styles.cartContainer}>
-      <div>
-        <ul className={styles.cartUnorderedList}>
+      <div className={styles.cartUnorderedList}>
+        <ul>
           {cartDisplay.map((item) => (
             <li className={styles.cartDisplayItem} key={item.id}>
               <img src={item.image} alt="" />
@@ -73,8 +78,9 @@ function Cart({
             </h3>
           )}
 
-        <div><button type="button">Proceed To Checkout</button></div>
-        <div><button type="button">Back to Shop</button></div>
+        <div><button type="button" onClick={handleCheckout}>Proceed To Checkout</button></div>
+        <div><button type="button"><Link to="/shop" style={{ textDecoration: 'none' }}>Back To Shop</Link></button></div>
+
       </div>
     </div>
   );

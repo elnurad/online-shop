@@ -20,6 +20,8 @@ body {
 .cartUnorderedList {
   margin: auto;
   width: 50%;
+  height: 60vh;
+  overflow-y: scroll;
 }
 
 .cartPrice {
@@ -32,7 +34,7 @@ body {
   width: 5rem;
 }
 .cartContainer img {
-  max-height: 103px;
+  max-height: 6em;
   display: inline-block;
   border: 0;
   max-width: 100%;
@@ -70,11 +72,11 @@ body {
 }
 .paymentUI {
   text-align: center;
+  margin: 0.5em;
 
 } 
 .paymetUI h3, .paymentUI button {
   margin: 0.5rem;
- 
   color: #fff;
   background-color: #9882b0;
   border: 0;
@@ -90,6 +92,15 @@ body {
 
 }
 
+.paymentUI a:visited {
+  text-decoration: none;
+  color:#fff;
+
+}
+.fontAwesomeCart:visited {
+  text-decoration: none;
+  color: black;
+}
 .cartQuantityButton button {
   width: 1.2rem;
   border-style: solid;
@@ -97,4 +108,5 @@ body {
   border-color:  #9882b0;
   
 }
+
 

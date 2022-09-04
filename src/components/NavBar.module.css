@@ -8,3 +8,12 @@
     margin:0.5em;
     margin-top: 1em;
 }
+.navbarCart a {
+    color:  #373734;
+    text-decoration: none;
+}
+
+.navbarCart a:visited {
+    color:  #373734;
+    text-decoration: none;
+}

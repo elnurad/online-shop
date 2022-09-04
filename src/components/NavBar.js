@@ -12,9 +12,10 @@ function NavBar({ cartQuantity, setCartQuantity }) {
   return (
     <div className={styles.navbar}>
       <img className={styles.navbarImg} src={logo.default} alt="" />
-      <Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
-      {/* <FontAwesomeIcon icon={faCartShopping} /> */}
-      <span>{cartQuantity}</span>
+      <div className={styles.navbarCart}>
+        <Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
+        <span><Link to="/cart">{cartQuantity}</Link></span>
+      </div>
     </div>
   );
 }
