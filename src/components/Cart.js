@@ -42,34 +42,37 @@ function Cart({
   return (
     <div className={styles.cartContainer}>
       <div className={styles.cartUnorderedList}>
-        <ul>
-          {cartDisplay.map((item) => (
-            <li className={styles.cartDisplayItem} key={item.id}>
-              <img src={item.image} alt="" />
-              <div className={styles.cartDisplayText}>
-                <div className={styles.cartFoodNames}><h4>{item.name}</h4></div>
-                <div className={styles.cartPrice}>
-                  <p>
-                    $
-                    {item.price}
-                  </p>
+        {cartDisplay.length === 0 ? (<h2>your cart is empty</h2>)
+          : (
+            <ul>
+              {cartDisplay.map((item) => (
+                <li className={styles.cartDisplayItem} key={item.id}>
+                  <img src={item.image} alt="" />
+                  <div className={styles.cartDisplayText}>
+                    <div className={styles.cartFoodNames}><h4>{item.name}</h4></div>
+                    <div className={styles.cartPrice}>
+                      <p>
+                        $
+                        {item.price}
+                      </p>
 
-                </div>
-                <div className={styles.cartQuantityButton}>
-                  <button type="button" onClick={() => increment(item)}>+</button>
-                  {item.quantity}
-                  <button type="button" onClick={() => decrement(item)}>-</button>
-                </div>
-                <div className={styles.trashCan}>
-                  <FontAwesomeIcon icon={faTrashCan} onClick={() => removeItem(item)} />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+                    </div>
+                    <div className={styles.cartQuantityButton}>
+                      <button type="button" onClick={() => increment(item)}>+</button>
+                      {item.quantity}
+                      <button type="button" onClick={() => decrement(item)}>-</button>
+                    </div>
+                    <div className={styles.trashCan}>
+                      <FontAwesomeIcon icon={faTrashCan} onClick={() => removeItem(item)} />
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
       </div>
       <div className={styles.paymentUI}>
-        {cartDisplay.length === 0 ? (<h1>your cart is empty</h1>)
+        {cartDisplay.length === 0 ? ('')
           : (
             <h3 className={styles.total}>
               Total:

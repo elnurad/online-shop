@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CatCardHome from './CatCardHome';
 import ShopButton from './ShopButton';
-import styles from './CatCardRow.module.css';
+import styles from './Home.module.css';
 
 function Home({ catImageOne, catImageTwo, catImageThree }) {
   Home.propTypes = {
@@ -21,10 +21,18 @@ function Home({ catImageOne, catImageTwo, catImageThree }) {
     <div>
       <div className={styles.container}>
         <div>
-          <CatCardHome catImage={catImageOne} rangeTitle={rangeTitleOne} rangeText={rangeTextOne} />
+          <CatCardHome
+            catImage={catImageOne}
+            rangeTitle={rangeTitleOne}
+            rangeText={rangeTextOne}
+          />
         </div>
         <div>
-          <CatCardHome catImage={catImageTwo} rangeTitle={rangeTitleTwo} rangeText={rangeTextTwo} />
+          <CatCardHome
+            catImage={catImageTwo}
+            rangeTitle={rangeTitleTwo}
+            rangeText={rangeTextTwo}
+          />
         </div>
         <div>
           <CatCardHome

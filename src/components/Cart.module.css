@@ -16,6 +16,7 @@ body {
 .cartContainer {
   margin: 1em;
   margin-top: 2em;
+  text-align: center;
 }
 .cartUnorderedList {
   margin: auto;
@@ -97,10 +98,7 @@ body {
   color:#fff;
 
 }
-.fontAwesomeCart:visited {
-  text-decoration: none;
-  color: black;
-}
+
 .cartQuantityButton button {
   width: 1.2rem;
   border-style: solid;
