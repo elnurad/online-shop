@@ -8,3 +8,20 @@
 .shopButtonRow {
     text-align: center;;
 }
+
+@media (max-width: 840px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+    img {
+        display: block;
+        margin: auto;
+    }
+    .shopButtonRow {
+        margin: 1em;
+    }
+
+       
+    }

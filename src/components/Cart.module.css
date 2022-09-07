@@ -14,9 +14,13 @@ body {
   line-height: 1.11;
 }
 .cartContainer {
-  margin: 1em;
+  margin-bottom: 1em;
   margin-top: 2em;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
   text-align: center;
+
 }
 .cartUnorderedList {
   margin: auto;
@@ -107,4 +111,22 @@ body {
   
 }
 
+@media (max-width: 840px) {
+  .cartUnorderedList {
+    width: 100%;
+   
+  }
+
+  .paymetUI h3, .paymentUI button {
+    
+    font-weight: 200;
+    width: 50%;
+  
+  }
+  .cartContainer {
+   
+  }
+
+     
+  }
 

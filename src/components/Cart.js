@@ -1,32 +1,32 @@
-/* eslint-disable no-alert */
 /* eslint-disable no-param-reassign */
-/* eslint-disable max-len */
-/* eslint-disable react/prop-types */
+/* eslint-disable no-alert */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styles from './Cart.module.css';
-// import CatFoodCard from './CatFoodCard';
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
 function Cart({
-  // eslint-disable-next-line no-unused-vars
   cart, setCart, cartQuantity, setCartQuantity,
 }) {
+  Cart.propTypes = {
+    cart: PropTypes.instanceOf(Array).isRequired,
+    setCart: PropTypes.func.isRequired,
+    cartQuantity: PropTypes.number.isRequired,
+    setCartQuantity: PropTypes.func.isRequired,
+
+  };
   const cartDisplay = [...cart];
   const increment = (item) => {
-    // eslint-disable-next-line no-param-reassign
     item.quantity += 1;
     setCartQuantity(cartQuantity + 1);
-    console.log(item.quantity);
     setCart([...cartDisplay]);
   };
   const decrement = (item) => {
     if (item.quantity > 1) {
       item.quantity -= 1;
       setCartQuantity(cartQuantity - 1);
-      console.log(item.quantity);
       setCart([...cartDisplay]);
     }
   };

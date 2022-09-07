@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import CatCardHome from './CatCardHome';
+import CatGalleryHome from './CatGalleryHome';
 import ShopButton from './ShopButton';
 import styles from './Home.module.css';
 
@@ -21,21 +21,21 @@ function Home({ catImageOne, catImageTwo, catImageThree }) {
     <div>
       <div className={styles.container}>
         <div>
-          <CatCardHome
+          <CatGalleryHome
             catImage={catImageOne}
             rangeTitle={rangeTitleOne}
             rangeText={rangeTextOne}
           />
         </div>
         <div>
-          <CatCardHome
+          <CatGalleryHome
             catImage={catImageTwo}
             rangeTitle={rangeTitleTwo}
             rangeText={rangeTextTwo}
           />
         </div>
         <div>
-          <CatCardHome
+          <CatGalleryHome
             catImage={catImageThree}
             rangeTitle={rangeTitleThree}
             rangeText={rangeTextThree}
