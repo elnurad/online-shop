@@ -85,10 +85,9 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   return (
-    <Router>
+    <Router basename="/">
       <div className="App">
         <NavBar cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
-        <Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />
         <Routes>
           <Route path="/" element={<Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />} />
           <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
