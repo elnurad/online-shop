@@ -90,7 +90,7 @@ function App() {
         <NavBar cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
         <Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />
         <Routes>
-          <Route path="/" exact element={<Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />} />
+          <Route path="/" element={<Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />} />
           <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
         </Routes>
