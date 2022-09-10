@@ -88,9 +88,10 @@ function App() {
     <Router>
       <div className="App">
         <NavBar cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
+        <Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />
         <Routes>
-          <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
           <Route path="/" exact element={<Home catImageOne={catImageOne} catImageTwo={catImageTwo} catImageThree={catImageThree} />} />
+          <Route path="/shop" element={<Shop cart={cart} setCart={setCart} foodItems={foodItems} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />} />
         </Routes>
       </div>

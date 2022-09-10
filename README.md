@@ -1,3 +1,6 @@
+The Shopping Cart Project I created as part of the Odin Project curriculum. The live version can be viewed [here](https://elnurad.github.io/online-shop/). I used React and React Router for this project.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
