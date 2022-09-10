@@ -85,7 +85,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <NavBar cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
         <Routes>
