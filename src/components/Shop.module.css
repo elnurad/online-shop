@@ -1,20 +1,29 @@
 .shopContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.foodRowContainer {
     background-color: #fff;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
     margin: 2em;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
     padding: 1em;
 }
 .shopContainerImg {
     margin: 0.5em;
     
 }
+.goToCartButton {
+    text-align: center;;
+}
+
 
 
 @media (max-width: 840px) {
-    .shopContainer {
+    .foodRowContainer {
         display: flex;
         flex-direction: column;
     }

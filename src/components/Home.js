@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CatGalleryHome from './CatGalleryHome';
-import ShopButton from './ShopButton';
+import Button from './Button';
 import styles from './Home.module.css';
 
 function Home({ catImageOne, catImageTwo, catImageThree }) {
@@ -42,7 +42,11 @@ function Home({ catImageOne, catImageTwo, catImageThree }) {
           />
         </div>
       </div>
-      <Link to="/shop"><div className={styles.shopButtonRow}><ShopButton /></div></Link>
+      <Link to="/shop">
+        <div className={styles.shopButtonRow}>
+          <Button buttonText="Shop Our Ranges" />
+        </div>
+      </Link>
     </div>
 
   );

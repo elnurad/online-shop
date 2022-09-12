@@ -20,3 +20,14 @@
     color:  #373734;
     text-decoration: none;
 }
+
+@media (max-width: 840px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        margin: 0.4em;
+        margin-top: 0.8em;
+    }
+   
+       
+    }

@@ -1,24 +1,22 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-// import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Shop.module.css';
 import CatFoodCard from './CatFoodCard';
+import Button from './Button';
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
 function Shop({
   cart, setCart, foodItems, cartQuantity, setCartQuantity,
 }) {
   Shop.propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
-    foodItems: PropTypes.array.isRequired,
+    foodItems: PropTypes.instanceOf(Array).isRequired,
+    cart: PropTypes.instanceOf(Array).isRequired,
+    setCart: PropTypes.func.isRequired,
+    cartQuantity: PropTypes.number.isRequired,
+    setCartQuantity: PropTypes.func.isRequired,
   };
   const addItem = (item) => {
-    console.log(cart);
-    // eslint-disable-next-line react/prop-types
     if (cart.indexOf(item) > -1) {
       item.quantity += 1;
       setCartQuantity(cartQuantity + 1);
@@ -26,12 +24,11 @@ function Shop({
     }
     setCart([...cart, item]);
     setCartQuantity(cartQuantity + 1);
-    console.log(cartQuantity);
   };
 
   return (
-    <div>
-      <div className={styles.shopContainer}>
+    <div className={styles.shopContainer}>
+      <div className={styles.foodRowContainer}>
         {foodItems.map((item) => (
           <div key={item.id} className={styles.shopContainerImg}>
             <CatFoodCard
@@ -43,6 +40,11 @@ function Shop({
           </div>
         ))}
       </div>
+      <Link to="/cart">
+        <div className={styles.goToCartButton}>
+          <Button buttonText="Go To Cart" />
+        </div>
+      </Link>
     </div>
   );
 }
